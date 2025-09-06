@@ -1,0 +1,24 @@
+# Composer - Dependencias
+/vendor/
+
+# Archivos de entorno
+# Guarda aquí tus variables de entorno y configuración local.
+.env
+.env.local
+.env.*.local
+
+# Logs y archivos temporales
+/logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos de configuración de IDEs
+.idea/
+.vscode/
+
+# Archivos del sistema operativo
+.DS_Store
+
+

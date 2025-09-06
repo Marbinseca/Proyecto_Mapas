@@ -4,13 +4,18 @@ Esta es una aplicación web sencilla que permite a los usuarios subir archivos d
 
 ## ✨ Características
 
-- **Carga de Archivos**: Soporta la subida de archivos `.xlsx`, `.xls` y `.csv`.
-- **Procesamiento en el Servidor**: Utiliza PHP y la librería `PhpSpreadsheet` para leer y procesar los datos de los archivos de forma eficiente.
-- **Selección de Hoja**: Si un archivo Excel contiene múltiples hojas, la aplicación permite al usuario seleccionar cuál de ellas visualizar.
-- **Mapeo Dinámico de Columnas**: El usuario puede seleccionar dinámicamente qué columnas del archivo corresponden a la **latitud**, la **longitud** y el **nombre** de cada punto.
-- **Visualización en Mapa**: Renderiza los puntos en un mapa interactivo usando Leaflet.js, centrado en el territorio de Colombia.
+- **Carga de Archivos**: Soporta la subida de archivos `.xlsx`, `.xls` y `.csv` a través de una ventana modal.
+- **Interfaz Moderna con Menús**: Navegación intuitiva a través de menús desplegables para "Archivo" y "Visualización".
+- **Múltiples Capas de Mapa**: Permite al usuario cambiar entre diferentes vistas de mapa:
+  - **OpenStreetMap**: Mapa de calles estándar.
+  - **Satélite**: Vista satelital de alta resolución (proveída por Esri).
+  - **Claro**: Un mapa minimalista para resaltar los datos (proveído por Carto).
+- **Descarga de Mapa**: Opción para descargar la vista actual del mapa como una imagen PNG (disponible en la capa OpenStreetMap).
+- **Controles de Visualización**: Menú para mostrar/ocultar los controles de configuración y la tabla de datos, así como para centrar el mapa en los puntos cargados.
+- **Selección de Hoja y Columnas**: Permite seleccionar la hoja de cálculo y mapear dinámicamente las columnas de latitud, longitud y nombre.
+- **Limpiar Sesión**: Funcionalidad para reiniciar la aplicación y cargar un nuevo archivo sin necesidad de recargar la página.
 - **Vista Previa de Datos**: Muestra los datos del archivo cargado en una tabla para una fácil revisión.
-- **Interfaz Limpia**: Construido con Bootstrap para una experiencia de usuario limpia y responsiva.
+- **Procesamiento en el Servidor**: Utiliza PHP y la librería `PhpSpreadsheet` para leer y procesar los datos de los archivos de forma eficiente.
 
 ---
 
@@ -49,19 +54,20 @@ Sigue estos pasos para configurar y ejecutar el proyecto en tu entorno local.
 
 ## 📖 ¿Cómo se usa?
 
-1.  **Selecciona un archivo**: Haz clic en el botón "Seleccionar archivo" y elige un fichero `.xlsx`, `.xls` o `.csv` de tu equipo.
-    > 💡 Puedes usar los ficheros de la carpeta `Ejemplo_Datos/` para probar.
-
-2.  **Sube el archivo**: Haz clic en el botón "Subir Archivo". La aplicación procesará los datos.
+1.  **Cargar un archivo**: Ve al menú `Archivo` > `Cargar Nuevo Archivo`. Se abrirá una ventana donde podrás seleccionar un fichero `.xlsx`, `.xls` o `.csv`.
 
 3.  **Configura las columnas**:
+    - Una vez cargado el archivo, aparecerá el panel de configuración.
     - Si el archivo es un Excel con varias hojas, selecciona la hoja correcta en el desplegable "Selecciona una hoja".
     - En los desplegables "Columna de Latitud" y "Columna de Longitud", elige las columnas que contienen las coordenadas.
     - (Opcional) Selecciona una columna en "Columna de Nombres" para que los marcadores en el mapa muestren un título específico.
 
-4.  **Muestra en el mapa**: Haz clic en el botón "Mostrar en el Mapa".
+4.  **Muestra en el mapa**: Haz clic en el botón "Aplicar y Mostrar en Mapa".
 
-5.  **Explora**: Los puntos aparecerán en el mapa. Puedes hacer clic en cada marcador para ver su información. La tabla de abajo te mostrará todos los datos del archivo.
+5.  **Explora y Personaliza**:
+    - Los puntos aparecerán en el mapa. Haz clic en cada marcador para ver su información.
+    - Usa el control en la esquina superior derecha del mapa para cambiar entre las capas "OpenStreetMap", "Satélite" y "Claro".
+    - Utiliza el menú `Visualización` para ocultar elementos, centrar el mapa o descargarlo como imagen.
 
 ---
 
@@ -76,3 +82,4 @@ Sigue estos pasos para configurar y ejecutar el proyecto en tu entorno local.
   - JavaScript
   - jQuery
   - Leaflet.js
+  - leaflet-image
